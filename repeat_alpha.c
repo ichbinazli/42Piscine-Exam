@@ -2,29 +2,30 @@
 
 int	main(int ac, char **av)
 {
-	int a;
-	a = 0;
-	int b;
+	int i,b;
+	i = 0;
 
 	if(ac == 2)
 	{
-		while(av[1][a] != '\0')
+		while(av[1][i] != '\0')
 		{
 			b = 1;
-			if(av[1][a] >= 'A' && av[1][a] <= 'Z')
+			if(av[1][i] >= 'A' && av[1][i] <= 'Z')
 			{
-				b = av[1][a] -64;
+				b = av[1][i] - 64;
 			}
-			if(av[1][a] >= 'a' && av[1][a] <= 'z')
+			
+			if(av[1][i] >= 'a' && av[1][i] <= 'z')
 			{
-				b = av[1][a] -96;
+				b = av[1][i] - 96;
 			}
+
 			while(b >= 1)
 			{
-				write(1, &av[1][a], 1);
+				write(1, &av[1][i], 1);
 				b--;
 			}
-			a++;
+			i++;
 		}
 	}
 	write(1, "\n", 1);
